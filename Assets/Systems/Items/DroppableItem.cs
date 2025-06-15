@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Diamonds : MonoBehaviour
+public class DroppableItem : MonoBehaviour
 {
     public bool isDroppable = false;
 
@@ -19,7 +19,7 @@ public class Diamonds : MonoBehaviour
         if (isDroppable)
         {
             Rigidbody2D rgbd = gameObject.GetComponent<Rigidbody2D>();
-            rgbd.constraints = RigidbodyConstraints2D.FreezeRotation;// | RigidbodyConstraints2D.FreezePositionX;
+            rgbd.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
         else
         {
