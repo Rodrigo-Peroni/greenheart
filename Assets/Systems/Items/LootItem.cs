@@ -1,4 +1,4 @@
-﻿namespace Assets.Utils.Items
+﻿namespace Assets.Systems.Items
 {
     /// <summary>
     /// This class relates Items and the respective amount to be looted in a single entity.    

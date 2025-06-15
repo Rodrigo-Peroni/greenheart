@@ -4,8 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.Utils.Skills
+namespace Assets.Systems.Skills
 {
+    /// <summary>
+    /// 
+    /// Each Skill has a Name, a Description and a list (Dictionary) of SkillLevel
+    /// Different SkillLevels will have different cost, description, etc 
+    /// as can be seen in the SkillLevel class.
+    /// The skill also has a maxmimum level and information on which is the current 
+    /// level of that one skill.
+    /// 
+    /// </summary>
     public class Skill
     {
         public string SkillName { get; set; }

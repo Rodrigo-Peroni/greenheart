@@ -1,7 +1,15 @@
-﻿namespace Assets.Utils.Skills
+﻿namespace Assets.Systems.Skills
 {
     /// <summary>
-    /// This class persists the information regardin a single Skill Level
+    /// 
+    /// The SkillLevel class persists the information regarding a single Skill Level
+    /// It contains a name, a description and a cost to upgrade to the next level.
+    /// 
+    /// The changes in the character behavior that a given Skill level provides
+    /// are not implemented here, but in the Player class, in the methods LoadJumpSkill()
+    /// LoadAttackSkill() and LoadHealSkill(). These method can be found in the 
+    /// region "Skill Loading Methods".
+    /// 
     /// </summary>
     public class SkillLevel
     {

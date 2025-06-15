@@ -10,7 +10,7 @@ public class PathFollower : MonoBehaviour
     public float moveSpeed;
 
     private float timer;
-    private Node[] pathNode;
+    private PathNode[] pathNode;
     private int currentNode = 0;
     private Vector3 currentPositionHolder;
     private Vector3 startPosition;
@@ -37,7 +37,7 @@ public class PathFollower : MonoBehaviour
 
     public void ResetNodeTree()
     {
-        pathNode = pathObject.GetComponentsInChildren<Node>();
+        pathNode = pathObject.GetComponentsInChildren<PathNode>();
         CheckNode();
     }
 

@@ -1,4 +1,4 @@
-﻿using Assets.Utils.Items;
+﻿using Assets.Systems.Items;
 using UnityEngine;
 
 public class LootDropper : MonoBehaviour

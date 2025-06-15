@@ -1,4 +1,4 @@
-﻿namespace Assets.Utils.Items
+﻿namespace Assets.Systems.Items
 {
     public enum ItemCode
     {

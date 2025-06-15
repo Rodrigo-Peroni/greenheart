@@ -1,7 +1,4 @@
-﻿using Assets.Utils.Skills;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Systems.Skills;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,6 +48,10 @@ public class SkillsMenu : MonoBehaviour
         diamondValueText.text = "x" + playerManager.diamondsAmount;
     }
 
+    /// <summary>
+    /// Shows in the skill menu the name, description and cost of the skills' next level.
+    /// </summary>
+    /// <param name="skillName">Name of the skill</param>
     private void LoadValuesForSkill(string skillName)
     {        
         Skill skill = playerManager.SkillsList.Skills[skillName];
@@ -67,6 +68,7 @@ public class SkillsMenu : MonoBehaviour
 
         if (skill.IsNotInMaximumLevel)
         {
+            // Shows name, description and cost for the next SkillLevel
             SkillLevel skillNextLevel = skill.SkillLevels[currentLevel+1];
 
             skillNameText.text = skillNextLevel.SkillLevelName;
@@ -76,6 +78,7 @@ public class SkillsMenu : MonoBehaviour
         }
         else
         {
+            // Shows only information htat the skill level is maximized
             skillNameText.text = "";
             skillDescriptionText.text = "Maximum Level";
             skillDescriptionText.fontSize = 20;
@@ -84,6 +87,11 @@ public class SkillsMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets the GameObject referring to the given skill (in the Scene SkillMenu)
+    /// </summary>
+    /// <param name="skillName">Name of the skill</param>
+    /// <returns>GameObject that containd the skill bar for the given skill</returns>
     private GameObject GetSkillBarForSkill(string skillName)
     {
         switch (skillName)
@@ -99,7 +107,13 @@ public class SkillsMenu : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// The Update method is being used to get the keyboard/controller inputs
+    /// and move the cursor through the available skills.
+    /// 
+    /// Detailed implementations can be found in the methods in regions
+    /// "Cursor Movement" and "Get Directional Value"
+    /// </summary>
     void Update()
     {
         float horizontalValue = GetHorizontalValue();
@@ -137,6 +151,14 @@ public class SkillsMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Performs the action corresponding to the selected button, which can be upgrade a skill
+    /// or clicking on the "Done" button.
+    /// 
+    /// The verification of which is the current button selected is done by verifying the value of handPosition (called "hand" because 
+    /// the cursor is depicted with a hand image).
+    /// The manipulation of the handPosition value can be found in the methods located in the region "Cursor Movement".
+    /// </summary>
     private void PerformActionOnCurrentSelection()
     {
         if (handPosition == 0)
@@ -163,6 +185,9 @@ public class SkillsMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Go to next game level according to the PlayerManager
+    /// </summary>
     private void GoToNextLevel()
     {
         Hud.instance.TurnOffBlur();
@@ -170,6 +195,9 @@ public class SkillsMenu : MonoBehaviour
         playerManager.LoadNextLevel();
     }
 
+    /// <summary>
+    /// Used to refresh the values of a single skill bar once that skill is upgraded.
+    /// </summary>
     private void RefreshCurrentSkillBar()
     {
         switch (handPosition)
@@ -186,6 +214,10 @@ public class SkillsMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns if a skill can be upgraded based on the information of the Skill maximum level.
+    /// </summary>
+    /// <returns>Returns true if the skill can be upgraded, false otherwise</returns>
     private bool CanCurrentSkillBeUpgraded()
     {
         Skill currentSkill = GetSelectedSkill();
@@ -199,6 +231,11 @@ public class SkillsMenu : MonoBehaviour
         return false;        
     }
 
+    /// <summary>
+    /// Get the selected skill based on the handPosition value.
+    /// The manipulation of the handPosition value cna be found in the methods located in the region "Cursor Movement".
+    /// </summary>
+    /// <returns>Returns the current selected Skill</returns>
     private Skill GetSelectedSkill()
     {        
         switch (handPosition)

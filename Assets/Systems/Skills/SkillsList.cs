@@ -1,4 +1,4 @@
-﻿using Assets.Utils.Skills;
+﻿using Assets.Systems.Skills;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -27,7 +27,11 @@ public class SkillsList : MonoBehaviour
 
     public Dictionary<string, Skill> Skills { get; private set; }
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// The Skills Dictionary is loaded on the Awake() method because 
+    /// loading a Dictionary directly from the Unity Editor was not 
+    /// available in the Unity version where it was developed.
+    /// </summary>
     void Awake()
     {
         Skills = new Dictionary<string, Skill>();

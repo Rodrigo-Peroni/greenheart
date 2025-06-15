@@ -1,5 +1,5 @@
-﻿using Assets.Utils.Items;
-using Assets.Utils.Skills;
+﻿using Assets.Systems.Items;
+using Assets.Systems.Skills;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -71,36 +71,8 @@ public class Player : MonoBehaviour
         IsInMovablePlatform = false;
 
         cameraController = GameObject.Find("Main Camera").GetComponent<CameraController>();
-
-        // Estou tratando o Player Manager inteiramente aqui no código.
-        // Uma outra opção que tinha, depois que adicionei o controle estático na criação dele,
-        // era de apenas colocar um PlayerManager em cada nível, igual acontece com o SoundManager e Hud.
-        // Optei por deixar aqui, porque gosto da ideia de que o PlayerManager é responsabilidade do Player e 
-        // não do Nível.
-        // 
-        // Se fosse seguir esse conceito 100%, eu acredito que a criação do Hud deveria ser responsabilidade do
-        // Player também. Mas isso é food for thought pro futuro (tem que levar em consideração que o Hud tem elementos
-        // visuais que não dá pra criar direto no código, enquanto o PlayerManager é só um script). Provavelmente teria
-        // que ter um Prefab e ir instanciando a partir dele...
-        //
-        // Havia também a possibilidade do PlayerManager ser só uma classe estática, que não herdasse do MonoBehaviour,
-        // mas aqui estou optando por usar a abordagem de tê-lo como um GameObject.
-        //try
-        //{
-        //    playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();            
-        //}
-        //catch (Exception)
-        //{
-        //    GameObject newGameObject = new GameObject("PlayerManager");
-        //    newGameObject.AddComponent<PlayerManager>();
-        //    playerManager = newGameObject.GetComponent<PlayerManager>();
-        //}
-
-        // Mudei o código acima porque eu precisava do PlayerManager com a Skill List (e é foda criar ela na mão no código,
-        // não foi feita pra isso). Agora, eu chupei o que disse acima e coloquei um PlayerManager em cada nível.
-        // Conceitualmente, até o momento, eu não acho que isso é um problema (vide os outros Managers, o conceito é o mesmo).
-        // Eu ainda to pegando ele com um Find porque não curti muito o approach de usar uma instancia estática dele dentro dele
-        // (igual foi feito no Hud e Sound Manager). MAs no futuro, vale analisar se isso é interessante.
+        
+        // Get the PlayerManager using Find.
         playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
 
         health = playerManager.playerHealth;

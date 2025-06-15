@@ -8,6 +8,13 @@ public class PlayerManager : MonoBehaviour
 {
     public int diamondsAmount = 0;
     public int playerHealth = 3;
+    /// <summary>
+    /// The SkillsList will be bound to the character manager so that
+    /// it is valid and accessible during the whole game session.
+    /// 
+    /// The values utilized during the SkillList creation can be found in the Unity Editor
+    /// in the prefab PlayerManager (Assets\Prefabs\PlayerManager)
+    /// </summary>
     public SkillsList SkillsList { get; private set; }
     public string NextLevel { get; set; }
     public bool IsInMenu { get; set; } = false;
