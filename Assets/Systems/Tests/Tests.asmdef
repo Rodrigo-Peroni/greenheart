@@ -1,8 +1,11 @@
 {
-    "name": "Unity.2D.Tilemap.Extras.Placeholder.EditorTests",
+    "name": "Tests",
+    "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
-        "UnityEditor.TestRunner"
+        "UnityEditor.TestRunner",
+        "ItemsModule",
+        "SkillsModule"
     ],
     "includePlatforms": [
         "Editor"
