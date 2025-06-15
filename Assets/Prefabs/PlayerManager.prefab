@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &110772970586619250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 110772970586619244}
+  - component: {fileID: 110772970586619251}
+  - component: {fileID: -1698551561187980016}
+  m_Layer: 0
+  m_Name: PlayerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &110772970586619244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110772970586619250}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.8707373, y: 0.88153404, z: -0.18934914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &110772970586619251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110772970586619250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389739f2d8ec08c4a816814160cf601d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diamondsAmount: 0
+  playerHealth: 0
+--- !u!114 &-1698551561187980016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110772970586619250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6877951f351f52c46bc117fe42bb2589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillEntries:
+  - skillName: Jump
+    skillDescription: Jump Skill
+    skillLevelEntries:
+    - skillLevel: 0
+      skillLevelName: Jump
+      skillLevelDescrition: You can jump. A simple boring jump. But hey! It's still
+        a jump!
+      skillLevelCost: 0
+    - skillLevel: 1
+      skillLevelName: Anti-Grav Boots
+      skillLevelDescrition: The most awesome and shiny boots of the realm! While
+        wearing them you don't feel your weight as much and can jump higher!
+      skillLevelCost: 50
+    - skillLevel: 2
+      skillLevelName: Double Jump Boots
+      skillLevelDescrition: Leave your days of low gravity behind! Who needs it when
+        you can double jump?
+      skillLevelCost: 100
+  - skillName: Attack
+    skillDescription: Attack Skill
+    skillLevelEntries:
+    - skillLevel: 0
+      skillLevelName: Hammer
+      skillLevelDescrition: With this one, you can hammer nails and, eventually,
+        your enemies.
+      skillLevelCost: 0
+    - skillLevel: 1
+      skillLevelName: Silver Hammer
+      skillLevelDescrition: Crush skulls and smash bones with this improved version
+        of the regular hammer!
+      skillLevelCost: 50
+    - skillLevel: 2
+      skillLevelName: Titanium Hammer
+      skillLevelDescrition: A hammer forged by the God of Thunder himself. All pigs
+        will cry and despair!
+      skillLevelCost: 100
+  - skillName: Heal
+    skillDescription: Heal Skill
+    skillLevelEntries:
+    - skillLevel: 0
+      skillLevelName: Life Flow
+      skillLevelDescrition: A Life Heart will flow from your own body once for each
+        30 diamonds that you pick up.
+      skillLevelCost: 0
+    - skillLevel: 1
+      skillLevelName: Improved Life Flow
+      skillLevelDescrition: Life Hearts will flow from your body more frequently.
+        Once every 20 diamonds!
+      skillLevelCost: 50
+    - skillLevel: 2
+      skillLevelName: Life Plenitude
+      skillLevelDescrition: Your body is one with the nature. Only 10 diamonds are
+        needed for a Life Heart!
+      skillLevelCost: 100

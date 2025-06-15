@@ -1,0 +1,44 @@
+﻿using Assets.Utils.Items;
+using UnityEngine;
+
+public class LootDropper : MonoBehaviour
+{
+    public Transform spawnPoint;
+    public GameObject blueDiamond;
+    public GameObject purpleDiamond;
+    public GameObject heart;
+
+    public void DropLoot(LootItem lootItem)
+    {
+        for (int i=0; i<lootItem.Amount; i++)
+        {
+            GameObject item;
+            switch (lootItem.Code)
+            {
+                default:
+                case ItemCode.BlueDiamond:
+                    item = Instantiate(blueDiamond, spawnPoint.position, spawnPoint.rotation);
+                    break;
+                case ItemCode.PurpleDiamond:
+                    item = Instantiate(purpleDiamond, spawnPoint.position, spawnPoint.rotation);
+                    break;
+                case ItemCode.Heart:
+                    item = Instantiate(heart, spawnPoint.position, spawnPoint.rotation);
+                    break;
+            }
+
+            int positive = Random.Range(0, 2) * 2 - 1;
+            float xForce = 100f + (Random.Range(0f, 50f));            
+            item.gameObject.GetComponent<Diamonds>().SetIsDroppable(true);
+            if (positive < 0)
+            {
+                item.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-xForce, 300f));
+            }
+            else
+            {
+                item.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(xForce, 300f));
+            }
+        }
+    }
+
+}
