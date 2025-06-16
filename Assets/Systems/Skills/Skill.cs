@@ -21,7 +21,7 @@ namespace Assets.Systems.Skills
         public string SkillDescription { get; set; }
         public Dictionary<Level, SkillLevel> SkillLevels { get; set; }
 
-        private readonly Level skillMaximumLevel;
+        public Level SkillMaximumLevel { get; private set; }
         public Level SkillCurrentLevel { get; set; }
 
         public Skill(string skillName, string skillDescription, Dictionary<Level, SkillLevel> skillLevels)
@@ -30,7 +30,7 @@ namespace Assets.Systems.Skills
             this.SkillDescription = skillDescription;
             this.SkillLevels = skillLevels;
 
-            skillMaximumLevel = (Level)(SkillLevels.Count - 1);
+            SkillMaximumLevel = (Level)(SkillLevels.Count - 1);
             SkillCurrentLevel = Level.L0;
         }
 
@@ -38,7 +38,7 @@ namespace Assets.Systems.Skills
         {
             get
             {
-                return SkillCurrentLevel < skillMaximumLevel;
+                return SkillCurrentLevel < SkillMaximumLevel;
             }            
         }
 
