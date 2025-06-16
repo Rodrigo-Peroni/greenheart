@@ -5,7 +5,8 @@
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "ItemsModule",
-        "SkillsModule"
+        "SkillsModule",
+        "ScriptsModule"
     ],
     "includePlatforms": [
         "Editor"

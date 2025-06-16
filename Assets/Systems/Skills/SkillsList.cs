@@ -28,6 +28,15 @@ public class SkillsList : MonoBehaviour
     public Dictionary<string, Skill> Skills { get; private set; }
 
     /// <summary>
+    /// Constructor created exclusively for testing purposes.
+    /// </summary>
+    /// <param name="skills">the Skill list</param>
+    public SkillsList(Dictionary<string, Skill> skills)
+    {
+        this.Skills = skills;
+    }
+
+    /// <summary>
     /// The Skills Dictionary is loaded on the Awake() method because 
     /// loading a Dictionary directly from the Unity Editor was not 
     /// available in the Unity version where it was developed.

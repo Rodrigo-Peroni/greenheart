@@ -25,6 +25,15 @@ public class LootTable : MonoBehaviour
     public Dictionary<float, LootItem> Table { get; set; }
 
     /// <summary>
+    /// Constructor created exclusively for testing purposes.
+    /// </summary>
+    /// <param name="lootTable">the Loot Table</param>
+    public LootTable(Dictionary<float, LootItem> lootTable)
+    {
+        this.Table = lootTable;
+    }
+
+    /// <summary>
     /// The Table Dictionary is loaded on the Awake() method because 
     /// loading a Dictionary directly from the Unity Editor was not 
     /// available in the Unity version where it was developed.
