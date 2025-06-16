@@ -1,6 +1,13 @@
 ﻿using Assets.Systems.Items;
 using UnityEngine;
 
+/// <summary>
+/// This class is responsible for effectively spawning the loot on the screen
+/// taking into consideration the item to de dropped and its amount.
+/// 
+/// This script should be added to the Prefab from where the items will be
+/// dropper (e.g. the "Pig" prefab)
+/// </summary>
 public class LootDropper : MonoBehaviour
 {
     public Transform spawnPoint;

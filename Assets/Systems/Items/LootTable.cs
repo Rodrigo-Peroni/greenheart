@@ -3,6 +3,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// This class is responsible to generate loot randomizally based
+/// on the loot table with drop chances set in Prefabs that contain
+/// a LootTable (e.g. the Pig prefab)
+/// 
+/// </summary>
 public class LootTable : MonoBehaviour
 {
     [Serializable]
@@ -17,7 +24,11 @@ public class LootTable : MonoBehaviour
 
     public Dictionary<float, LootItem> Table { get; set; }
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// The Table Dictionary is loaded on the Awake() method because 
+    /// loading a Dictionary directly from the Unity Editor was not 
+    /// available in the Unity version where it was developed.
+    /// </summary>
     void Awake()
     {
         Table = new Dictionary<float, LootItem>();
@@ -27,6 +38,11 @@ public class LootTable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets a LootItem based on the LootTable set in the prefab.
+    /// A LootItem instance contains the item and the amount of items to be dropped.
+    /// </summary>
+    /// <returns>The randomized LootItem</returns>
     public LootItem GetLootFromLootTable()
     {
         float randomNumber = UnityEngine.Random.Range(0f, 100f);
